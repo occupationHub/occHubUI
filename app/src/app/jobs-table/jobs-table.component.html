@@ -1,0 +1,24 @@
+<div class="col-12 mt-5">
+    <div class="panel panel-default">
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Employer</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Notes</th>
+                <th>Conclusion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let occupation of occupations">
+                <td>{{occupation.employer}}</td>
+                <td>{{occupation.status}}</td>
+                <td>{{occupation.date}}</td>
+                <td>{{occupation.notes}}</td>
+                <td>{{occupation.conclusion}}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
