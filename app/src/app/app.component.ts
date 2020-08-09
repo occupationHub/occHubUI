@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { JobCreationComponent } from './job-creation/job-creation.component';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(public modalService: NgbModal){}
+
+  open() {
+    const modalRef = this.modalService.open(JobCreationComponent);
+    modalRef.componentInstance.name = 'asdf';
+    // modalRef.componentInstance.employer = 'Microsoft';
+
+  }
 }
