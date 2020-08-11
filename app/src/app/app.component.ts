@@ -8,14 +8,10 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'app';
 
   constructor(public modalService: NgbModal){}
 
   open() {
     const modalRef = this.modalService.open(JobCreationComponent);
-    modalRef.componentInstance.name = 'asdf';
-    // modalRef.componentInstance.employer = 'Microsoft';
-
   }
 }

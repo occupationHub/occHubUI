@@ -13,7 +13,8 @@ export class JobCreationComponent implements OnInit {
   @Input() name;
   public employer:String = "";
   public date: NgbDateStruct;
-  public note: String = "";
+  public note: String ="";
+  public notes: String[] = [];
   dateChosen: {year: number, month: number, date:number};
 
   constructor(
@@ -28,14 +29,16 @@ export class JobCreationComponent implements OnInit {
   
   submitNewApplication(){
     const formattedDate = this.date.month + "/" + this.date.day + "/" + this.date.year;
+    this.notes.push(this.note);
     console.log(formattedDate);
     const newJob: Occupation = {
       employer: this.employer,
       status: 'In Progress',
       date: formattedDate,
-      notes: this.note,
+      notes: this.notes,
       conclusion: "TBD"
     }
+    console.log(newJob);
     this.occupationService.createNewJob(newJob);
     this.activeModal.close('bars');
   }
