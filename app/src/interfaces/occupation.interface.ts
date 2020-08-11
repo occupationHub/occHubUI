@@ -1,4 +1,4 @@
-export interface occupation{
+export interface Occupation{
     employer: String;
     status: String;
     date: String;
